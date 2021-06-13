@@ -2,6 +2,37 @@
 session_start();
 include('dbcon.php');
     
+    if (isset($_POST['update_contact'])) 
+    {
+        $key = $_POST['key'];
+        $nome = $_POST['first_name'];
+        $sobrenome = $_POST['last_name'];
+        $email = $_POST['email'];
+        $phone = $_POST['phone'];
+
+        $updateData = [
+            'fname'=> $nome,
+            'lname'=> $sobrenome,
+            'email'=> $email,
+            'phone'=> $phone,
+
+        ];
+        $ref_table= 'contacts/'.$key;
+        $updatequery_result =  $database->getReference($ref_table)->update($updateData);
+
+        if ($updatequery_result) {
+            $_SESSION['status'] = "Contato atualizado com sucesso";
+            header('Location: index.php');
+        }
+        else{
+            $_SESSION['status'] = "Erro ao atualizar";
+            header('Location: index.php');
+
+        }
+    }
+
+
+
     if(isset($_POST['save_contact']))
     {
         $nome = $_POST['first_name'];

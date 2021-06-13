@@ -53,7 +53,7 @@ session_start();
                                                 <td><?=$row['email']; ?></td>
                                                 <td><?=$row['phone']; ?></td>
                                                 <td>
-                                                    <a href="edit-contact.php" class="btn btn-primary btn-sm">Editar</a>
+                                                    <a href="edit-contact.php?id=<?=$key;?>" class="btn btn-primary btn-sm">Editar</a>
                                                 </td>
                                                 <td>
                                                     <a href="delete-contact.php" class="btn btn-primary btn-sm">Deletar</a>
