@@ -56,7 +56,10 @@ session_start();
                                                     <a href="edit-contact.php?id=<?=$key;?>" class="btn btn-primary btn-sm">Editar</a>
                                                 </td>
                                                 <td>
-                                                    <a href="delete-contact.php" class="btn btn-primary btn-sm">Deletar</a>
+                                                   <!-- <a href="delete-contact.php" class="btn btn-primary btn-sm">Deletar</a> -->
+                                                    <form action="code.php" method="POST">
+                                                        <button type="submit" name="delete_btn" value="<?=$key?>" class="btn btn-primary btn-sm">Deletar</button>
+                                                    </form>
                                                 </td>
                                             </tr>
                                             <?php
