@@ -5,7 +5,7 @@ include('dbcon.php');
     if (isset($_POST['delete_btn'])) {
         $del_id = $_POST['delete_btn'];
         $ref_table = 'contacts/'.$del_id;
-       $deletequery_result =  $database->detReference()->remove();
+       $deletequery_result =  $database->getReference($ref_table)->remove();
 
        if ($deletequery_result) {
         $_SESSION['status'] = "Contato deletado com sucesso";
