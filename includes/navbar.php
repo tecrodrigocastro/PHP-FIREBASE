@@ -11,16 +11,16 @@
       <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
 
         <li class="nav-item">
-          <a class="nav-link"  href="#">Home</a>
+          <a class="nav-link"  href="index.php">Home</a>
         </li>
         <li class="nav-item">
           <a class="nav-link"  href="#">Sobre</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link"  href="#">Cadastro</a>
+          <a class="nav-link"  href="register.php">Registro</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link"  href="#">Login</a>
+          <a class="nav-link"  href="login.php">Login</a>
         </li>
      
     </div>

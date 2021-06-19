@@ -6,6 +6,20 @@ session_start();
 
     <div class="container">
         <div class="row">
+            <div class="col-md-6 mb-3">
+                <div class="card">
+                    <div class="card-body">
+                        <h5>No total de registro:
+                            <?php
+                            include('dbcon.php');
+                            $ref_table= 'contacts';
+                            $total_count = $database->getReference($ref_table)->getSnapshot()->numChildren();
+                            echo $total_count;
+                           ?>
+                        </h5>
+                    </div>
+                </div>
+            </div>
             <div class="col-md-12">
                 <?php
                     if (isset($_SESSION['status'])) {

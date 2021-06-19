@@ -2,6 +2,34 @@
 session_start();
 include('dbcon.php');
     
+
+    if (isset($_POST['register_btn'])) {
+        $fullname = $_POST['full_name'];
+        $phone = $_POST['phone'];
+        $email = $_POST['email'];
+        $pass = $_POST['password'];
+
+        $userProperties = [
+            'email' => $email,
+            'emailVerified' => false,
+            'phoneNumber' => '+55'.$phone,
+            'password' => $pass,
+            'displayName' => $fullname,
+        ];
+        
+        $createdUser = $auth->createUser($userProperties);
+        if ($createdUser) {
+            $_SESSION['status'] = "Usuario criado com sucesso";
+            header('Location: register.php');
+            exit();
+        }else{
+            $_SESSION['status'] = "Erro ao criar usuario";
+            header('Location: register.php');
+            exit();
+        }
+    }
+
+
     if (isset($_POST['delete_btn'])) {
         $del_id = $_POST['delete_btn'];
         $ref_table = 'contacts/'.$del_id;
